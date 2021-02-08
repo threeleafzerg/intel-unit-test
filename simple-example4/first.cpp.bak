@@ -1,0 +1,110 @@
+#include <iostream>
+#include <CL/sycl.hpp>
+//#include <random>
+#include <stdlib.h>
+#include <cmath>
+
+using namespace std;
+using namespace cl::sycl;
+
+struct randomFiller {};
+
+int global = 2;
+
+struct Base {
+  Base(int rhs): m_i(rhs) {};
+  virtual ~Base() {};
+  int m_i;
+};
+
+static void handle_exception(const cl::sycl::exception &e) {
+  std::cout << "SYCL exception caught: " << e.what() << std::endl;
+}
+
+static void handle_exceptions(const cl::sycl::exception_list &l) {
+  std::cout << "SYCL exception handler called\n";
+
+  for (cl::sycl::exception_ptr_class const& eptr : l) {
+    try {
+      std::rethrow_exception(eptr);
+    }
+    catch (cl::sycl::exception const& e) {
+      std::cout << "Caught asynchronous SYCL exception: " << e.what() << std::endl;
+    }
+  }
+}
+
+void test()
+{
+  
+ /* queue.submit([&](cl::sycl::handler cgh) {
+    cgh.parallel_for<class test>(cl::sycl::nd_range<1>(cl::sycl::range<1>(256), cl::sycl::range<1>(256)), [=](cl::sycl::nd_item<1>item_id){
+      int a = 0;
+      a++;
+      });  
+  });*/
+}
+
+
+void bar(const cl::sycl::accessor<int, 1, access::mode::read_write, cl::sycl::access::target::global_buffer> &ptr) {
+//  try {
+//    ptr[0] = 1;
+//    Base b(1);
+//    global = 3;
+    
+    //assert(0);
+//  } catch(...) {
+//  }
+    thread_local int a=100;
+}
+
+void bar1(const cl::sycl::accessor<int, 1, access::mode::read_write, cl::sycl::access::target::global_buffer> &ptr) {
+   bar(ptr);
+}
+
+void bar2(const cl::sycl::accessor<int, 1, access::mode::read_write, cl::sycl::access::target::global_buffer> &ptr) {
+  bar1(ptr);
+}
+
+void bar3(const cl::sycl::accessor<int, 1, access::mode::read_write, cl::sycl::access::target::global_buffer> &ptr) {
+  bar2(ptr);
+}
+
+void bar4(const cl::sycl::accessor<int, 1, access::mode::read_write, cl::sycl::access::target::global_buffer> &ptr) {
+  bar3(ptr);
+}
+
+void randomFill(buffer<int, 1>& buf, queue& myQueue) { 
+	myQueue.submit([&](handler& cgh) {
+	auto ptr = buf.get_access<access::mode::read_write>(cgh); 
+  auto a = cl::sycl::accessor<int, 1, access::mode::read_write, cl::sycl::access::target::local>(10, cgh);
+  //bar4(ptr);
+  cgh.parallel_for<randomFiller> (cl::sycl::nd_range<1>(cl::sycl::range<1>(256), cl::sycl::range<1>(256)),
+                                  [=](cl::sycl::nd_item<1> item_id) {
+                                      if (item_id.get_local_linear_id() != 0) { 
+                                        ptr[item_id.get_local_linear_id()] = 100;
+                                        bar4(ptr);
+                                      }
+                                  });
+	});
+}
+
+
+int main(int argc, char **argv) {
+  cl::sycl::queue deviceQueue(handle_exceptions);
+  int arr[256] = {0};
+	try {
+		cl::sycl::buffer<int, 1> buf(arr, 256);
+		randomFill(buf, deviceQueue);
+		deviceQueue.wait_and_throw();
+	}
+	catch (cl::sycl::exception &e) {
+  	handle_exception(e);
+  }
+	
+	for (int i = 0; i < 256; i++) {
+	  printf("arr[%d] = %d \n", i, arr[i]);
+	}
+  
+  return 0;
+}

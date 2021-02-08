@@ -1,0 +1,26 @@
+#include <iostream>
+#include <CL/sycl.hpp>
+#include <stdlib.h>
+#include <cmath>
+
+using namespace std;
+using namespace cl::sycl;
+
+int main(int argc, char **argv) {
+  cl::sycl::queue queue;
+  queue.submit([&](handler &cgh) { 
+    //char *a = (char *)malloc(1);
+    int x = 1;
+
+    cgh.parallel_for<class test>(cl::sycl::nd_range<1>(cl::sycl::range<1>(480 * 256), cl::sycl::range<1>(256)),
+    [=](cl::sycl::nd_item<1> item_id) {
+      char *a = NULL;
+      *a = 'c';
+      int y = x;
+      y += 1;
+    }); 
+  });
+  queue.wait();
+  std::cout << "Kernel execute completion!" << std::endl;
+  return 0;
+}

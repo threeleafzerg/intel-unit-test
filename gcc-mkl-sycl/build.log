@@ -1,0 +1,2 @@
+g++ -std=c++11 -c -fPIC gemm.cpp -I /home/sunbear/intel/data_parallel_cpp_1.0_pre_alpha_update_7_011/dpcpp/lib/clang/9.0.0/include -I /opt/intel/opencl/include -I /home/sunbear/intel/data_parallel_cpp_1.0_pre_alpha_update_7_011/mkl/include
+makefile:20: recipe for target 'gemm.o' failed

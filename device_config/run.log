@@ -1,0 +1,97 @@
+--------------------------------------------------------------------------------
+Device information
+--------------------------------------------------------------------------------
+Device type: gpu
+Vendor ID: 32902
+Max compute units: 24
+Max work item dimensions: 3
+Max work item sizes: 256 256 256 
+Max work group size: 256
+Preferred vector width char: 16
+Preferred vector width short: 8
+Preferred vector width int: 4
+Preferred vector width long: 1
+Preferred vector width float: 1
+Preferred vector width double: 1
+Preferred vector width half: 8
+Native vector width char: 16
+Native vector width short: 8
+Native vector width int: 4
+Native vector width long: 1
+Native vector width float: 1
+Native vector width double: 1
+Native vector width half: 8
+Address bits: 64
+Max mem alloc size: 4294959104
+Image support: true
+Max read image args: 128
+Max write image args: 128
+Image2D max width: 16384
+Image2D max height: 16384
+Image3D max width: 16384
+Image3D max height: 16384
+Image3D max depth: 2048
+Image max buffer size: 268434944
+Image max array size: 2048
+Max samplers: 16
+Max parameter size: 2048
+Mem base addr align: 1024
+Half fp config: denorm inf_nan round_to_nearest round_to_zero round_to_inf fma 
+Single fp config: denorm inf_nan round_to_nearest round_to_zero round_to_inf fma correctly_rounded_divide_sqrt 
+Double fp config: denorm inf_nan round_to_nearest round_to_zero round_to_inf fma 
+Global mem cache type: read_write
+Global mem cache line size: 64
+Global mem cache size: 524288
+Global mem size: 26824687616
+Max constant buffer size: 4294959104
+Max constant args: 8
+Local mem type: local
+Local mem size: 65536
+Error correction support: false
+Host unified memory: true
+Profiling timer resolution: 83
+Is endian little: true
+Is available: true
+Is compiler available: true
+Is linker available: true
+Execution capabilities: exec_kernel 
+Queue profiling: true
+Built in kernels: block_motion_estimate_intel block_advanced_motion_estimate_check_intel block_advanced_motion_estimate_bidirectional_check_intel 
+Platform: SYCL OpenCL platform
+Name: Intel(R) Gen9 HD Graphics NEO
+Vendor: Intel(R) Corporation
+Driver version: 20.41.18123
+Profile: FULL_PROFILE
+Version: OpenCL 3.0 NEO 
+OpenCL C version: OpenCL C 3.0 
+Extensions: cl_khr_byte_addressable_store cl_khr_fp16 cl_khr_global_int32_base_atomics cl_khr_global_int32_extended_atomics cl_khr_icd cl_khr_local_int32_base_atomics cl_khr_local_int32_extended_atomics cl_intel_subgroups cl_intel_required_subgroup_size cl_intel_subgroups_short cl_khr_spir cl_intel_accelerator cl_intel_driver_diagnostics cl_khr_priority_hints cl_khr_throttle_hints cl_khr_create_command_queue cl_intel_subgroups_char cl_intel_subgroups_long cl_khr_il_program cl_intel_mem_force_host_memory cl_khr_subgroup_extended_types cl_khr_subgroup_non_uniform_vote cl_khr_subgroup_ballot cl_khr_subgroup_non_uniform_arithmetic cl_khr_subgroup_shuffle cl_khr_subgroup_shuffle_relative cl_khr_subgroup_clustered_reduce cl_khr_fp64 cl_khr_subgroups cl_intel_spirv_device_side_avc_motion_estimation cl_intel_spirv_media_block_io cl_intel_spirv_subgroups cl_khr_spirv_no_integer_wrap_decoration cl_intel_unified_shared_memory_preview cl_khr_mipmap_image cl_khr_mipmap_image_writes cl_intel_planar_yuv cl_intel_packed_yuv cl_intel_motion_estimation cl_intel_device_side_avc_motion_estimation cl_intel_advanced_motion_estimation cl_khr_int64_base_atomics cl_khr_int64_extended_atomics cl_khr_image2d_from_buffer cl_khr_depth_images cl_intel_media_block_io cl_khr_3d_image_writes 
+Printf buffer size: 4194304
+Preferred interop user sync: true
+Expected exception has been caught: No parent for device because it is not a subdevice -33 (CL_INVALID_DEVICE)
+Partition max sub devices: 0
+Partition properties: no_partition 
+Partition affinity domains: none
+Partition type affinity domain: not_applicable
+Reference count: 1
+--------------------------------------------------------------------------------
+Platform information
+--------------------------------------------------------------------------------
+Profile: FULL_PROFILE
+Version: OpenCL 3.0 
+Name: Intel(R) OpenCL HD Graphics
+Vendor: Intel(R) Corporation
+Extensions: cl_khr_byte_addressable_store cl_khr_fp16 cl_khr_global_int32_base_atomics cl_khr_global_int32_extended_atomics cl_khr_icd cl_khr_local_int32_base_atomics cl_khr_local_int32_extended_atomics cl_intel_subgroups cl_intel_required_subgroup_size cl_intel_subgroups_short cl_khr_spir cl_intel_accelerator cl_intel_driver_diagnostics cl_khr_priority_hints cl_khr_throttle_hints cl_khr_create_command_queue cl_intel_subgroups_char cl_intel_subgroups_long cl_khr_il_program cl_intel_mem_force_host_memory cl_khr_subgroup_extended_types cl_khr_subgroup_non_uniform_vote cl_khr_subgroup_ballot cl_khr_subgroup_non_uniform_arithmetic cl_khr_subgroup_shuffle cl_khr_subgroup_shuffle_relative cl_khr_subgroup_clustered_reduce cl_khr_fp64 cl_khr_subgroups cl_intel_spirv_device_side_avc_motion_estimation cl_intel_spirv_media_block_io cl_intel_spirv_subgroups cl_khr_spirv_no_integer_wrap_decoration cl_intel_unified_shared_memory_preview cl_khr_mipmap_image cl_khr_mipmap_image_writes cl_intel_planar_yuv cl_intel_packed_yuv cl_intel_motion_estimation cl_intel_device_side_avc_motion_estimation cl_intel_advanced_motion_estimation cl_khr_int64_base_atomics cl_khr_int64_extended_atomics cl_khr_image2d_from_buffer cl_khr_depth_images cl_intel_media_block_io cl_khr_3d_image_writes 
+--------------------------------------------------------------------------------
+Queue information
+--------------------------------------------------------------------------------
+Device from queue information
+Name: Intel(R) Gen9 HD Graphics NEO
+--------------------------------------------------------------------------------
+Context information
+--------------------------------------------------------------------------------
+Devices from context information
+Name: Intel(R) Gen9 HD Graphics NEO
+--------------------------------------------------------------------------------
+Platform from context information
+--------------------------------------------------------------------------------
+Name: Intel(R) OpenCL HD Graphics

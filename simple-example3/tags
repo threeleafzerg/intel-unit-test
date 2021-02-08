@@ -1,0 +1,39 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CXXFLAGS	makefile	/^CXXFLAGS := -I $(DPC_CPP_ROOT)\/include -I $(OPENCL_ROOT)\/include -fsycl$/;"	m
+DPC_CPP_ROOT	makefile	/^DPC_CPP_ROOT := \/home\/sunbear\/intel\/dpcpp_bundle_1.0_prealpha_u8_020\/dpcpp_compiler$/;"	m
+LDFLAGS	makefile	/^LDFLAGS := -L $(OPENCL_ROOT)\/lib -lOpenCL -fsycl$/;"	m
+OPENCL_ROOT	makefile	/^OPENCL_ROOT := \/opt\/intel\/opencl$/;"	m
+SYCLCXX	makefile	/^SYCLCXX := $(DPC_CPP_ROOT)\/bin\/clang++$/;"	m
+add_vec	helper.hpp	/^  static T2 add_vec(const vec<T2, 16> &v) {$/;"	f	struct:utils
+add_vec	helper.hpp	/^  static T2 add_vec(const vec<T2, 1> &v) { return v.s0(); }$/;"	f	struct:utils
+add_vec	helper.hpp	/^  static T2 add_vec(const vec<T2, 2> &v) { return v.s0() + v.s1(); }$/;"	f	struct:utils
+add_vec	helper.hpp	/^  static T2 add_vec(const vec<T2, 4> &v) {$/;"	f	struct:utils
+add_vec	helper.hpp	/^  static T2 add_vec(const vec<T2, 8> &v) {$/;"	f	struct:utils
+check	first.cpp	/^template <typename T> void check(queue &Queue, size_t G = 240, size_t L = 60) {$/;"	f
+cmp_vec	helper.hpp	/^  static bool cmp_vec(const vec<T2, 16> &v, const vec<T2, 16> &r) {$/;"	f	struct:utils
+cmp_vec	helper.hpp	/^  static bool cmp_vec(const vec<T2, 1> &v, const vec<T2, 1> &r) {$/;"	f	struct:utils
+cmp_vec	helper.hpp	/^  static bool cmp_vec(const vec<T2, 2> &v, const vec<T2, 2> &r) {$/;"	f	struct:utils
+cmp_vec	helper.hpp	/^  static bool cmp_vec(const vec<T2, 4> &v, const vec<T2, 4> &r) {$/;"	f	struct:utils
+cmp_vec	helper.hpp	/^  static bool cmp_vec(const vec<T2, 8> &v, const vec<T2, 8> &r) {$/;"	f	struct:utils
+core_sg_supported	helper.hpp	/^bool core_sg_supported(const device &Device) {$/;"	f
+exit_if_not_equal	helper.hpp	/^template <> void exit_if_not_equal(half val, half ref, const char *name) {$/;"	f
+exit_if_not_equal	helper.hpp	/^template <typename T> void exit_if_not_equal(T val, T ref, const char *name) {$/;"	f
+exit_if_not_equal_vec	helper.hpp	/^void exit_if_not_equal_vec(vec<T, N> val, vec<T, N> ref, const char *name) {$/;"	f
+get_sg_size	helper.hpp	/^inline size_t get_sg_size(const device &Device) {$/;"	f
+main	first.cpp	/^int main() {$/;"	f
+stringify_vec	helper.hpp	/^  static std::string stringify_vec(const vec<T2, 16> &v) {$/;"	f	struct:utils
+stringify_vec	helper.hpp	/^  static std::string stringify_vec(const vec<T2, 1> &v) {$/;"	f	struct:utils
+stringify_vec	helper.hpp	/^  static std::string stringify_vec(const vec<T2, 2> &v) {$/;"	f	struct:utils
+stringify_vec	helper.hpp	/^  static std::string stringify_vec(const vec<T2, 4> &v) {$/;"	f	struct:utils
+stringify_vec	helper.hpp	/^  static std::string stringify_vec(const vec<T2, 8> &v) {$/;"	f	struct:utils
+utils	helper.hpp	/^template <typename T1, int N> struct utils {$/;"	s
+utils	helper.hpp	/^template <typename T2> struct utils<T2, 16> {$/;"	s
+utils	helper.hpp	/^template <typename T2> struct utils<T2, 1> {$/;"	s
+utils	helper.hpp	/^template <typename T2> struct utils<T2, 2> {$/;"	s
+utils	helper.hpp	/^template <typename T2> struct utils<T2, 4> {$/;"	s
+utils	helper.hpp	/^template <typename T2> struct utils<T2, 8> {$/;"	s

@@ -1,0 +1,5 @@
+prop vec size:1
+prop_vec[0]=0
+__SYCL_COMPILER_VERSION=20200930
+terminate called after throwing an instance of 'cl::sycl::feature_not_supported'
+  what():  

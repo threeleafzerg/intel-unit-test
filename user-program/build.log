@@ -1,0 +1,2 @@
+g++ -std=c++11 -I ./ -I /home/sunbear/intel/dpcpp_bundle_1.0_prealpha_u8_020/dpcpp_compiler/include -c main.cpp
+g++ main.o -o test -L./ -la -L/home/sunbear/intel/dpcpp_bundle_1.0_prealpha_u8_020/dpcpp_compiler/lib -lsycl -L/home/sunbear/intel/dpcpp_bundle_1.0_prealpha_u8_020/dpcpp_compiler/lib -lOpenCL

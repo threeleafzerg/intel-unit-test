@@ -1,0 +1,5 @@
+
+rm -f *.o 
+rm -f *.h
+rm -f *.bc
+rm -f a.out

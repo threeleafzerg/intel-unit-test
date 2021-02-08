@@ -1,0 +1,40 @@
+
+__attribute__((intel_reqd_sub_group_size(16)))
+__kernel void Dot_opt1(int n, __global float* x, __global float* y, __global float* result)
+{
+    int gid = get_global_id(0);
+
+    int element_id = gid;
+    result[element_id] = x[element_id] * y[element_id];
+
+    float acc = result[element_id];
+
+    // sum all of the accumulators
+    float simd_acc = sub_group_reduce_add(acc);
+    if (gid == 0)
+    {
+        result[0] = simd_acc;
+    }
+}
+
+__attribute__((intel_reqd_sub_group_size(16)))
+__kernel void Dot_opt2(int n, __global float* x, __global float* y, __global float* result)
+{
+    int gid = get_global_id(0);
+    int element_id = gid;
+    float16 x_v = vload16(gid, x);
+    float16 y_v = vload16(gid, y);
+    float16 r_v = x_v * y_v;
+    vstore16(r_v, element_id, result);
+    float acc = result[element_id];
+
+    // sum all of the accumulators
+    float simd_acc = sub_group_reduce_add(acc);
+    if (gid == 0)
+    {
+        result[0] = simd_acc;
+    }
+}
+
+
+

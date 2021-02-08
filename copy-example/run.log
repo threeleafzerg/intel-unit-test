@@ -1,0 +1,3 @@
+Time taken by copy host_a to buf_a: 0.192452 seconds
+Time taken by copy host_b to buf_b: 0.186371 seconds
+Time taken by copy host_c to buf_c: 0.177751 seconds

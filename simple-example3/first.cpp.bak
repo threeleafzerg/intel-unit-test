@@ -1,0 +1,88 @@
+#include "helper.hpp"
+#include <CL/sycl.hpp>
+#include <limits>
+#include <numeric>
+#include <assert.h>
+#include <cmath>
+#include <numeric>
+
+namespace DP = cl::sycl;
+static constexpr auto dp_global_buf = DP::access::target::global_buffer;
+static constexpr auto dp_rw_mode = DP::access::mode::read_write;
+template <typename ScalarType, DP::access::mode Mode = dp_rw_mode, int Dims = 1>
+using dp_global_acc_t = DP::accessor<ScalarType, Dims, Mode, dp_global_buf>;
+
+template <typename T>
+struct Fill {
+  Fill(T value): fill_value(value) {};
+  void operator()(const dp_global_acc_t<int> &acc_in, int offset) {
+    acc_in[offset] = fill_value;
+  }
+public:
+  T fill_value;
+};
+
+template<typename T>
+struct ApplyOp {
+  static void apply(const dp_global_acc_t<T> &acc_in, int offset, Fill<T> fill) {
+    fill(acc_in, offset);
+  }
+};
+
+#if 0
+template <typename T> void check(queue &Queue) {
+  T arr[256] = {0};
+  {
+    cl::sycl::buffer<T, 1> buf(arr, 256);
+    Fill<T> fill(1);
+    Queue.submit([&](cl::sycl::handler &cgh) {
+      auto acc = buf.template get_access<cl::sycl::access::mode::read_write>(cgh);
+      auto num_work_items = cl::sycl::nd_range<1>(cl::sycl::range<1>(256), cl::sycl::range<1>(256));
+      cgh.parallel_for<class hello_world>(num_work_items, [=] (cl::sycl::nd_item<1> nd_item){
+        ApplyOp<T>::apply(acc, nd_item.get_global_linear_id(), fill);
+      });
+    });
+    //Queue.wait_and_throw();
+  }
+  std::cout << "total result:" << std::accumulate(arr, arr+256, 0) << std::endl;
+}
+#endif
+
+int foo(int a) { return a * 3; };
+
+void check(queue &Queue) {
+  int arr[] = {10};
+  {
+    cl::sycl::buffer<int, 1> buf(arr, 1);
+    Queue.submit([&](cl::sycl::handler &cgh) {
+    auto acc = buf.template get_access<cl::sycl::access::mode::read_write>(cgh);
+    cgh.single_task<class hello_world>([=]() {
+      acc[0] = foo(acc[0]);
+    });
+    });
+  }
+
+  std::cout << "arr[0]" << arr[0] << std::endl;
+}
+
+cl::sycl::device getGPUDevice() {
+  auto plaform_list = cl::sycl::platform::get_platforms();
+  for(const auto& platform : plaform_list){
+    auto device_list = platform.get_devices();
+    for(const auto& device : device_list){
+      if (device.is_gpu()) {
+        std::cout << device.get_info<cl::sycl::info::device::name>() << std::endl;
+        return device;
+      }
+    }
+  }
+  std::cout << "No GPU Device" << std::endl;
+  exit(1);
+}
+
+int main() {
+  cl::sycl::device Device(getGPUDevice());
+  cl::sycl::queue Queue;
+  check(Queue);
+  return 0;
+}

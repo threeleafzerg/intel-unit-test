@@ -1,0 +1,11 @@
+ size:616562688 bytes (submit: 4363us)(wait: 57968us)(total: 62331us)
+ size:616562688 bytes (submit: 4171us)(wait: 59987us)(total: 64159us)
+ size:616562688 bytes (submit: 4317us)(wait: 62058us)(total: 66375us)
+ size:616562688 bytes (submit: 4243us)(wait: 61361us)(total: 65605us)
+ size:616562688 bytes (submit: 4473us)(wait: 61027us)(total: 65501us)
+----------with host cache-----------
+ size:616562688 bytes (submit: 75302us)(wait: 59222us)(total: 134524us)
+ size:616562688 bytes (submit: 4271us)(wait: 54942us)(total: 59213us)
+ size:616562688 bytes (submit: 4299us)(wait: 54759us)(total: 59059us)
+ size:616562688 bytes (submit: 4254us)(wait: 55018us)(total: 59272us)
+ size:616562688 bytes (submit: 4403us)(wait: 55759us)(total: 60163us)

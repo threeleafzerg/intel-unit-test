@@ -1,0 +1,1001 @@
+; SPIR-V
+; Version: 1.1
+; Generator: Khronos LLVM/SPIR-V Translator; 14
+; Bound: 622
+; Schema: 0
+               OpCapability Addresses
+               OpCapability Linkage
+               OpCapability Kernel
+               OpCapability Int64
+               OpCapability GenericPointer
+               OpCapability Int8
+          %1 = OpExtInstImport "OpenCL.std"
+               OpMemoryModel Physical64 OpenCL
+               OpEntryPoint Kernel %14 "_ZTS9DimensionILi1EE"
+               OpSource OpenCL_CPP 100000
+               OpName %__spirv_BuiltInGlobalOffset "__spirv_BuiltInGlobalOffset"
+               OpName %__spirv_BuiltInLocalInvocationId "__spirv_BuiltInLocalInvocationId"
+               OpName %__spirv_BuiltInGlobalInvocationId "__spirv_BuiltInGlobalInvocationId"
+               OpName %__spirv_BuiltInWorkgroupId "__spirv_BuiltInWorkgroupId"
+               OpName %__spirv_BuiltInNumWorkgroups "__spirv_BuiltInNumWorkgroups"
+               OpName %__spirv_BuiltInWorkgroupSize "__spirv_BuiltInWorkgroupSize"
+               OpName %__spirv_BuiltInGlobalSize "__spirv_BuiltInGlobalSize"
+               OpName %class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon "class._ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE_.anon"
+               OpName %class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item "class._ZTSN2cl4sycl7nd_itemILi2EEE.cl::sycl::nd_item"
+               OpName %class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item "class._ZTSN2cl4sycl4itemILi2ELb1EEE.cl::sycl::item"
+               OpName %struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase "struct._ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE.cl::sycl::detail::ItemBase"
+               OpName %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range "class._ZTSN2cl4sycl5rangeILi2EEE.cl::sycl::range"
+               OpName %class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array "class._ZTSN2cl4sycl6detail5arrayILi2EEE.cl::sycl::detail::array"
+               OpName %class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item "class._ZTSN2cl4sycl4itemILi2ELb0EEE.cl::sycl::item"
+               OpName %struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb0EEE_cl__sycl__detail__ItemBase "struct._ZTSN2cl4sycl6detail8ItemBaseILi2ELb0EEE.cl::sycl::detail::ItemBase"
+               OpName %class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group "class._ZTSN2cl4sycl5groupILi2EEE.cl::sycl::group"
+               OpName %_ZN2cl4sycl6detail7Builder10getElementILi2EEEKNS0_7nd_itemIXT_EEEPS5_ "_ZN2cl4sycl6detail7Builder10getElementILi2EEEKNS0_7nd_itemIXT_EEEPS5_"
+               OpName %_ZZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_ENKUlNS1_7nd_itemILi2EEEE_clES6_ "_ZZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_ENKUlNS1_7nd_itemILi2EEEE_clES6_"
+               OpName %_ZN7__spirvL14initGlobalSizeILi2EN2cl4sycl5rangeILi2EEEEET0_v "_ZN7__spirvL14initGlobalSizeILi2EN2cl4sycl5rangeILi2EEEEET0_v"
+               OpName %_ZN7__spirvL17initWorkgroupSizeILi2EN2cl4sycl5rangeILi2EEEEET0_v "_ZN7__spirvL17initWorkgroupSizeILi2EN2cl4sycl5rangeILi2EEEEET0_v"
+               OpName %_ZN7__spirvL17initNumWorkgroupsILi2EN2cl4sycl5rangeILi2EEEEET0_v "_ZN7__spirvL17initNumWorkgroupsILi2EN2cl4sycl5rangeILi2EEEEET0_v"
+               OpName %_ZN7__spirvL15initWorkgroupIdILi2EN2cl4sycl2idILi2EEEEET0_v "_ZN7__spirvL15initWorkgroupIdILi2EN2cl4sycl2idILi2EEEEET0_v"
+               OpName %_ZN7__spirvL22initGlobalInvocationIdILi2EN2cl4sycl2idILi2EEEEET0_v "_ZN7__spirvL22initGlobalInvocationIdILi2EN2cl4sycl2idILi2EEEEET0_v"
+               OpName %_ZN7__spirvL21initLocalInvocationIdILi2EN2cl4sycl2idILi2EEEEET0_v "_ZN7__spirvL21initLocalInvocationIdILi2EN2cl4sycl2idILi2EEEEET0_v"
+               OpName %_ZN7__spirvL16initGlobalOffsetILi2EN2cl4sycl2idILi2EEEEET0_v "_ZN7__spirvL16initGlobalOffsetILi2EN2cl4sycl2idILi2EEEEET0_v"
+               OpName %_ZN2cl4sycl6detail7Builder11createGroupILi2EEENS0_5groupIXT_EEERKNS0_5rangeIXT_EEES9_S9_RKNS0_2idIXT_EEE "_ZN2cl4sycl6detail7Builder11createGroupILi2EEENS0_5groupIXT_EEERKNS0_5rangeIXT_EEES9_S9_RKNS0_2idIXT_EEE"
+               OpName %_ZN2cl4sycl6detail7Builder10createItemILi2ELb1EEENSt9enable_ifIXT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEESG_ "_ZN2cl4sycl6detail7Builder10createItemILi2ELb1EEENSt9enable_ifIXT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEESG_"
+               OpName %_ZN2cl4sycl6detail7Builder10createItemILi2ELb0EEENSt9enable_ifIXntT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEE "_ZN2cl4sycl6detail7Builder10createItemILi2ELb0EEENSt9enable_ifIXntT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEE"
+               OpName %_ZN2cl4sycl6detail7Builder12createNDItemILi2EEENS0_7nd_itemIXT_EEERKNS0_4itemIXT_ELb1EEERKNS6_IXT_ELb0EEERKNS0_5groupIXT_EEE "_ZN2cl4sycl6detail7Builder12createNDItemILi2EEENS0_7nd_itemIXT_EEERKNS0_4itemIXT_ELb1EEERKNS6_IXT_ELb0EEERKNS0_5groupIXT_EEE"
+               OpName %_ZNK2cl4sycl7nd_itemILi2EE20get_global_linear_idEv "_ZNK2cl4sycl7nd_itemILi2EE20get_global_linear_idEv"
+               OpName %_ZNK2cl4sycl4itemILi2ELb1EE13get_linear_idEv "_ZNK2cl4sycl4itemILi2ELb1EE13get_linear_idEv"
+               OpName %_ZNK2cl4sycl6detail8ItemBaseILi2ELb1EE13get_linear_idEv "_ZNK2cl4sycl6detail8ItemBaseILi2ELb1EE13get_linear_idEv"
+               OpName %_ZNK2cl4sycl6detail5arrayILi2EEixEi "_ZNK2cl4sycl6detail5arrayILi2EEixEi"
+               OpName %_ZNK2cl4sycl6detail5arrayILi2EE15check_dimensionEi "_ZNK2cl4sycl6detail5arrayILi2EE15check_dimensionEi"
+               OpName %_ZN7__spirv21InitSizesSTGlobalSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv "_ZN7__spirv21InitSizesSTGlobalSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv"
+               OpName %_ZN7__spirv24InitSizesSTWorkgroupSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv "_ZN7__spirv24InitSizesSTWorkgroupSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv"
+               OpName %_ZN7__spirv24InitSizesSTNumWorkgroupsILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv "_ZN7__spirv24InitSizesSTNumWorkgroupsILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv"
+               OpName %_ZN7__spirv22InitSizesSTWorkgroupIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv "_ZN7__spirv22InitSizesSTWorkgroupIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv"
+               OpName %_ZN7__spirv29InitSizesSTGlobalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv "_ZN7__spirv29InitSizesSTGlobalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv"
+               OpName %_ZN7__spirv28InitSizesSTLocalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv "_ZN7__spirv28InitSizesSTLocalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv"
+               OpName %_ZN7__spirv23InitSizesSTGlobalOffsetILi2EN2cl4sycl2idILi2EEEE8initSizeEv "_ZN7__spirv23InitSizesSTGlobalOffsetILi2EN2cl4sycl2idILi2EEEE8initSizeEv"
+               OpName %_ZN2cl4sycl5groupILi2EEC2ERKNS0_5rangeILi2EEES6_S4_RKNS0_2idILi2EEE "_ZN2cl4sycl5groupILi2EEC2ERKNS0_5rangeILi2EEES6_S4_RKNS0_2idILi2EEE"
+               OpName %_ZN2cl4sycl4itemILi2ELb1EEC2ILb1EEERNSt9enable_ifIXT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEESE_ "_ZN2cl4sycl4itemILi2ELb1EEC2ILb1EEERNSt9enable_ifIXT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEESE_"
+               OpName %_ZN2cl4sycl4itemILi2ELb0EEC2ILb0EEERNSt9enable_ifIXntT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEE "_ZN2cl4sycl4itemILi2ELb0EEC2ILb0EEERNSt9enable_ifIXntT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEE"
+               OpName %_ZN2cl4sycl7nd_itemILi2EEC2ERKNS0_4itemILi2ELb1EEERKNS3_ILi2ELb0EEERKNS0_5groupILi2EEE "_ZN2cl4sycl7nd_itemILi2EEC2ERKNS0_4itemILi2ELb1EEERKNS3_ILi2ELb0EEERKNS0_5groupILi2EEE"
+               OpName %_ZN7__spirvL15getGlobalOffsetILi1EEEmv "_ZN7__spirvL15getGlobalOffsetILi1EEEmv"
+               OpName %_ZN7__spirvL15getGlobalOffsetILi0EEEmv "_ZN7__spirvL15getGlobalOffsetILi0EEEmv"
+               OpName %_ZN2cl4sycl2idILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm "_ZN2cl4sycl2idILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm"
+               OpName %_Z22__spirv_GlobalOffset_yv "_Z22__spirv_GlobalOffset_yv"
+               OpName %_Z22__spirv_GlobalOffset_xv "_Z22__spirv_GlobalOffset_xv"
+               OpName %_ZN2cl4sycl6detail5arrayILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm "_ZN2cl4sycl6detail5arrayILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm"
+               OpName %_ZN7__spirvL20getLocalInvocationIdILi1EEEmv "_ZN7__spirvL20getLocalInvocationIdILi1EEEmv"
+               OpName %_ZN7__spirvL20getLocalInvocationIdILi0EEEmv "_ZN7__spirvL20getLocalInvocationIdILi0EEEmv"
+               OpName %_Z27__spirv_LocalInvocationId_yv "_Z27__spirv_LocalInvocationId_yv"
+               OpName %_Z27__spirv_LocalInvocationId_xv "_Z27__spirv_LocalInvocationId_xv"
+               OpName %_ZN7__spirvL21getGlobalInvocationIdILi1EEEmv "_ZN7__spirvL21getGlobalInvocationIdILi1EEEmv"
+               OpName %_ZN7__spirvL21getGlobalInvocationIdILi0EEEmv "_ZN7__spirvL21getGlobalInvocationIdILi0EEEmv"
+               OpName %_Z28__spirv_GlobalInvocationId_yv "_Z28__spirv_GlobalInvocationId_yv"
+               OpName %_Z28__spirv_GlobalInvocationId_xv "_Z28__spirv_GlobalInvocationId_xv"
+               OpName %_ZN7__spirvL14getWorkgroupIdILi1EEEmv "_ZN7__spirvL14getWorkgroupIdILi1EEEmv"
+               OpName %_ZN7__spirvL14getWorkgroupIdILi0EEEmv "_ZN7__spirvL14getWorkgroupIdILi0EEEmv"
+               OpName %_Z21__spirv_WorkgroupId_yv "_Z21__spirv_WorkgroupId_yv"
+               OpName %_Z21__spirv_WorkgroupId_xv "_Z21__spirv_WorkgroupId_xv"
+               OpName %_ZN7__spirvL16getNumWorkgroupsILi1EEEmv "_ZN7__spirvL16getNumWorkgroupsILi1EEEmv"
+               OpName %_ZN7__spirvL16getNumWorkgroupsILi0EEEmv "_ZN7__spirvL16getNumWorkgroupsILi0EEEmv"
+               OpName %_ZN2cl4sycl5rangeILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm "_ZN2cl4sycl5rangeILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm"
+               OpName %_Z23__spirv_NumWorkgroups_yv "_Z23__spirv_NumWorkgroups_yv"
+               OpName %_Z23__spirv_NumWorkgroups_xv "_Z23__spirv_NumWorkgroups_xv"
+               OpName %_ZN7__spirvL16getWorkgroupSizeILi1EEEmv "_ZN7__spirvL16getWorkgroupSizeILi1EEEmv"
+               OpName %_ZN7__spirvL16getWorkgroupSizeILi0EEEmv "_ZN7__spirvL16getWorkgroupSizeILi0EEEmv"
+               OpName %_Z23__spirv_WorkgroupSize_yv "_Z23__spirv_WorkgroupSize_yv"
+               OpName %_Z23__spirv_WorkgroupSize_xv "_Z23__spirv_WorkgroupSize_xv"
+               OpName %_ZN7__spirvL13getGlobalSizeILi1EEEmv "_ZN7__spirvL13getGlobalSizeILi1EEEmv"
+               OpName %_ZN7__spirvL13getGlobalSizeILi0EEEmv "_ZN7__spirvL13getGlobalSizeILi0EEEmv"
+               OpName %_Z20__spirv_GlobalSize_yv "_Z20__spirv_GlobalSize_yv"
+               OpName %_Z20__spirv_GlobalSize_xv "_Z20__spirv_GlobalSize_xv"
+               OpDecorate %611 Constant
+        %611 = OpDecorationGroup
+               OpDecorate %612 FuncParamAttr ByVal
+        %612 = OpDecorationGroup
+               OpDecorate %613 FuncParamAttr Sret
+        %613 = OpDecorationGroup
+               OpDecorate %614 FuncParamAttr NoAlias
+        %614 = OpDecorationGroup
+               OpDecorate %615 Alignment 4
+        %615 = OpDecorationGroup
+               OpDecorate %616 Alignment 8
+        %616 = OpDecorationGroup
+               OpDecorate %617 Alignment 32
+        %617 = OpDecorationGroup
+               OpDecorate %618 MaxByteOffset 16
+        %618 = OpDecorationGroup
+               OpDecorate %619 MaxByteOffset 32
+        %619 = OpDecorationGroup
+               OpDecorate %620 MaxByteOffset 48
+        %620 = OpDecorationGroup
+               OpDecorate %621 MaxByteOffset 64
+        %621 = OpDecorationGroup
+               OpDecorate %__spirv_BuiltInNumWorkgroups BuiltIn NumWorkgroups
+               OpDecorate %__spirv_BuiltInWorkgroupSize BuiltIn WorkgroupSize
+               OpDecorate %__spirv_BuiltInWorkgroupId BuiltIn WorkgroupId
+               OpDecorate %__spirv_BuiltInLocalInvocationId BuiltIn LocalInvocationId
+               OpDecorate %__spirv_BuiltInGlobalInvocationId BuiltIn GlobalInvocationId
+               OpDecorate %__spirv_BuiltInGlobalSize BuiltIn GlobalSize
+               OpDecorate %__spirv_BuiltInGlobalOffset BuiltIn GlobalOffset
+               OpDecorate %_Z20__spirv_GlobalSize_xv LinkageAttributes "_Z20__spirv_GlobalSize_xv" Export
+               OpDecorate %_Z20__spirv_GlobalSize_yv LinkageAttributes "_Z20__spirv_GlobalSize_yv" Export
+               OpDecorate %_Z21__spirv_WorkgroupId_xv LinkageAttributes "_Z21__spirv_WorkgroupId_xv" Export
+               OpDecorate %_Z21__spirv_WorkgroupId_yv LinkageAttributes "_Z21__spirv_WorkgroupId_yv" Export
+               OpDecorate %_Z22__spirv_GlobalOffset_xv LinkageAttributes "_Z22__spirv_GlobalOffset_xv" Export
+               OpDecorate %_Z22__spirv_GlobalOffset_yv LinkageAttributes "_Z22__spirv_GlobalOffset_yv" Export
+               OpDecorate %__spirv_BuiltInGlobalOffset LinkageAttributes "__spirv_BuiltInGlobalOffset" Import
+               OpDecorate %__spirv_BuiltInGlobalSize LinkageAttributes "__spirv_BuiltInGlobalSize" Import
+               OpDecorate %__spirv_BuiltInWorkgroupId LinkageAttributes "__spirv_BuiltInWorkgroupId" Import
+               OpDecorate %_Z23__spirv_NumWorkgroups_xv LinkageAttributes "_Z23__spirv_NumWorkgroups_xv" Export
+               OpDecorate %_Z23__spirv_NumWorkgroups_yv LinkageAttributes "_Z23__spirv_NumWorkgroups_yv" Export
+               OpDecorate %_Z23__spirv_WorkgroupSize_xv LinkageAttributes "_Z23__spirv_WorkgroupSize_xv" Export
+               OpDecorate %_Z23__spirv_WorkgroupSize_yv LinkageAttributes "_Z23__spirv_WorkgroupSize_yv" Export
+               OpDecorate %__spirv_BuiltInNumWorkgroups LinkageAttributes "__spirv_BuiltInNumWorkgroups" Import
+               OpDecorate %__spirv_BuiltInWorkgroupSize LinkageAttributes "__spirv_BuiltInWorkgroupSize" Import
+               OpDecorate %_Z27__spirv_LocalInvocationId_xv LinkageAttributes "_Z27__spirv_LocalInvocationId_xv" Export
+               OpDecorate %_Z27__spirv_LocalInvocationId_yv LinkageAttributes "_Z27__spirv_LocalInvocationId_yv" Export
+               OpDecorate %_Z28__spirv_GlobalInvocationId_xv LinkageAttributes "_Z28__spirv_GlobalInvocationId_xv" Export
+               OpDecorate %_Z28__spirv_GlobalInvocationId_yv LinkageAttributes "_Z28__spirv_GlobalInvocationId_yv" Export
+               OpDecorate %_ZNK2cl4sycl6detail5arrayILi2EEixEi LinkageAttributes "_ZNK2cl4sycl6detail5arrayILi2EEixEi" Export
+               OpDecorate %__spirv_BuiltInGlobalInvocationId LinkageAttributes "__spirv_BuiltInGlobalInvocationId" Import
+               OpDecorate %__spirv_BuiltInLocalInvocationId LinkageAttributes "__spirv_BuiltInLocalInvocationId" Import
+               OpDecorate %_ZNK2cl4sycl4itemILi2ELb1EE13get_linear_idEv LinkageAttributes "_ZNK2cl4sycl4itemILi2ELb1EE13get_linear_idEv" Export
+               OpDecorate %_ZNK2cl4sycl7nd_itemILi2EE20get_global_linear_idEv LinkageAttributes "_ZNK2cl4sycl7nd_itemILi2EE20get_global_linear_idEv" Export
+               OpDecorate %_ZNK2cl4sycl6detail5arrayILi2EE15check_dimensionEi LinkageAttributes "_ZNK2cl4sycl6detail5arrayILi2EE15check_dimensionEi" Export
+               OpDecorate %_ZNK2cl4sycl6detail8ItemBaseILi2ELb1EE13get_linear_idEv LinkageAttributes "_ZNK2cl4sycl6detail8ItemBaseILi2ELb1EE13get_linear_idEv" Export
+               OpDecorate %_ZN2cl4sycl2idILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm LinkageAttributes "_ZN2cl4sycl2idILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm" Export
+               OpDecorate %_ZN2cl4sycl5rangeILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm LinkageAttributes "_ZN2cl4sycl5rangeILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm" Export
+               OpDecorate %_ZN2cl4sycl5groupILi2EEC2ERKNS0_5rangeILi2EEES6_S4_RKNS0_2idILi2EEE LinkageAttributes "_ZN2cl4sycl5groupILi2EEC2ERKNS0_5rangeILi2EEES6_S4_RKNS0_2idILi2EEE" Export
+               OpDecorate %_ZN2cl4sycl6detail7Builder10getElementILi2EEEKNS0_7nd_itemIXT_EEEPS5_ LinkageAttributes "_ZN2cl4sycl6detail7Builder10getElementILi2EEEKNS0_7nd_itemIXT_EEEPS5_" Export
+               OpDecorate %_ZN7__spirv22InitSizesSTWorkgroupIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv LinkageAttributes "_ZN7__spirv22InitSizesSTWorkgroupIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv" Export
+               OpDecorate %_ZN2cl4sycl6detail5arrayILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm LinkageAttributes "_ZN2cl4sycl6detail5arrayILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm" Export
+               OpDecorate %_ZN7__spirv21InitSizesSTGlobalSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv LinkageAttributes "_ZN7__spirv21InitSizesSTGlobalSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv" Export
+               OpDecorate %_ZN7__spirv23InitSizesSTGlobalOffsetILi2EN2cl4sycl2idILi2EEEE8initSizeEv LinkageAttributes "_ZN7__spirv23InitSizesSTGlobalOffsetILi2EN2cl4sycl2idILi2EEEE8initSizeEv" Export
+               OpDecorate %_ZN7__spirv24InitSizesSTNumWorkgroupsILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv LinkageAttributes "_ZN7__spirv24InitSizesSTNumWorkgroupsILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv" Export
+               OpDecorate %_ZN7__spirv24InitSizesSTWorkgroupSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv LinkageAttributes "_ZN7__spirv24InitSizesSTWorkgroupSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv" Export
+               OpDecorate %_ZN7__spirv28InitSizesSTLocalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv LinkageAttributes "_ZN7__spirv28InitSizesSTLocalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv" Export
+               OpDecorate %_ZN7__spirv29InitSizesSTGlobalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv LinkageAttributes "_ZN7__spirv29InitSizesSTGlobalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv" Export
+               OpDecorate %_ZN2cl4sycl7nd_itemILi2EEC2ERKNS0_4itemILi2ELb1EEERKNS3_ILi2ELb0EEERKNS0_5groupILi2EEE LinkageAttributes "_ZN2cl4sycl7nd_itemILi2EEC2ERKNS0_4itemILi2ELb1EEERKNS3_ILi2ELb0EEERKNS0_5groupILi2EEE" Export
+               OpDecorate %_ZZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_ENKUlNS1_7nd_itemILi2EEEE_clES6_ LinkageAttributes "_ZZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_ENKUlNS1_7nd_itemILi2EEEE_clES6_" Export
+               OpDecorate %_ZN2cl4sycl4itemILi2ELb0EEC2ILb0EEERNSt9enable_ifIXntT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEE LinkageAttributes "_ZN2cl4sycl4itemILi2ELb0EEC2ILb0EEERNSt9enable_ifIXntT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEE" Export
+               OpDecorate %_ZN2cl4sycl4itemILi2ELb1EEC2ILb1EEERNSt9enable_ifIXT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEESE_ LinkageAttributes "_ZN2cl4sycl4itemILi2ELb1EEC2ILb1EEERNSt9enable_ifIXT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEESE_" Export
+               OpDecorate %_ZN2cl4sycl6detail7Builder11createGroupILi2EEENS0_5groupIXT_EEERKNS0_5rangeIXT_EEES9_S9_RKNS0_2idIXT_EEE LinkageAttributes "_ZN2cl4sycl6detail7Builder11createGroupILi2EEENS0_5groupIXT_EEERKNS0_5rangeIXT_EEES9_S9_RKNS0_2idIXT_EEE" Export
+               OpDecorate %_ZN2cl4sycl6detail7Builder12createNDItemILi2EEENS0_7nd_itemIXT_EEERKNS0_4itemIXT_ELb1EEERKNS6_IXT_ELb0EEERKNS0_5groupIXT_EEE LinkageAttributes "_ZN2cl4sycl6detail7Builder12createNDItemILi2EEENS0_7nd_itemIXT_EEERKNS0_4itemIXT_ELb1EEERKNS6_IXT_ELb0EEERKNS0_5groupIXT_EEE" Export
+               OpDecorate %_ZN2cl4sycl6detail7Builder10createItemILi2ELb0EEENSt9enable_ifIXntT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEE LinkageAttributes "_ZN2cl4sycl6detail7Builder10createItemILi2ELb0EEENSt9enable_ifIXntT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEE" Export
+               OpDecorate %_ZN2cl4sycl6detail7Builder10createItemILi2ELb1EEENSt9enable_ifIXT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEESG_ LinkageAttributes "_ZN2cl4sycl6detail7Builder10createItemILi2ELb1EEENSt9enable_ifIXT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEESG_" Export
+               OpDecorate %19 Alignment 1
+               OpGroupDecorate %611 %__spirv_BuiltInGlobalOffset %__spirv_BuiltInLocalInvocationId %__spirv_BuiltInGlobalInvocationId %__spirv_BuiltInWorkgroupId %__spirv_BuiltInNumWorkgroups %__spirv_BuiltInWorkgroupSize %__spirv_BuiltInGlobalSize
+               OpGroupDecorate %612 %47 %309
+               OpGroupDecorate %613 %38 %72 %77 %82 %87 %92 %97 %102 %113 %127 %139 %148 %263 %267 %271 %275 %279 %283 %287
+               OpGroupDecorate %614 %38 %72 %77 %82 %87 %92 %97 %102 %113 %127 %139 %148 %263 %267 %271 %275 %279 %283 %287
+               OpGroupDecorate %615 %241 %259
+               OpGroupDecorate %616 %31 %52 %54 %55 %56 %57 %58 %59 %60 %62 %64 %66 %165 %167 %180 %181 %195 %196 %209 %239 %258 %291 %292 %293 %294 %295 %313 %314 %315 %326 %327 %336 %338 %340 %351 %352 %353 %354 %372 %373 %374 %387 %388 %389 %390 %406 %407 %408 %409 %446 %447 %448 %460 %461 %462 %555 %556 %557
+               OpGroupDecorate %617 %__spirv_BuiltInGlobalOffset %__spirv_BuiltInLocalInvocationId %__spirv_BuiltInGlobalInvocationId %__spirv_BuiltInWorkgroupId %__spirv_BuiltInNumWorkgroups %__spirv_BuiltInWorkgroupSize %__spirv_BuiltInGlobalSize
+               OpGroupDecorate %618 %114 %115 %116 %117 %128 %129 %130 %140 %141 %307 %308 %310 %321 %322 %323 %332 %333
+               OpGroupDecorate %619 %150 %347
+               OpGroupDecorate %620 %149 %346
+               OpGroupDecorate %621 %151 %348
+      %ulong = OpTypeInt 64 0
+      %uchar = OpTypeInt 8 0
+       %uint = OpTypeInt 32 0
+    %ulong_2 = OpConstant %ulong 2
+    %ulong_1 = OpConstant %ulong 1
+     %uint_0 = OpConstant %uint 0
+     %uint_1 = OpConstant %uint 1
+     %uint_2 = OpConstant %uint 2
+    %ulong_0 = OpConstant %ulong 0
+   %ulong_16 = OpConstant %ulong 16
+   %ulong_48 = OpConstant %ulong 48
+   %ulong_32 = OpConstant %ulong 32
+   %ulong_64 = OpConstant %ulong 64
+     %uint_3 = OpConstant %uint 3
+    %v3ulong = OpTypeVector %ulong 3
+%_ptr_CrossWorkgroup_v3ulong = OpTypePointer CrossWorkgroup %v3ulong
+       %void = OpTypeVoid
+         %13 = OpTypeFunction %void
+%class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon = OpTypeStruct %uchar
+%_ptr_Function_class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon = OpTypePointer Function %class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon
+%_arr_ulong_ulong_2 = OpTypeArray %ulong %ulong_2
+%class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array = OpTypeStruct %_arr_ulong_ulong_2
+%class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range = OpTypeStruct %class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array
+%struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase = OpTypeStruct %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+%class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item = OpTypeStruct %struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase
+%struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb0EEE_cl__sycl__detail__ItemBase = OpTypeStruct %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+%class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item = OpTypeStruct %struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb0EEE_cl__sycl__detail__ItemBase
+%class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group = OpTypeStruct %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+%class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item = OpTypeStruct %class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item %class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item %class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group
+%_ptr_Function_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item = OpTypePointer Function %class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+%_ptr_Function_uchar = OpTypePointer Function %uchar
+%_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item = OpTypePointer Generic %class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+         %36 = OpTypeFunction %void %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+%_ptr_Generic_class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon = OpTypePointer Generic %class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon
+         %44 = OpTypeFunction %void %_ptr_Generic_class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon %_ptr_Function_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+%_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item = OpTypePointer Function %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+%_ptr_Function_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range = OpTypePointer Function %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+%_ptr_Function_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group = OpTypePointer Function %class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group
+%_ptr_Function_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item = OpTypePointer Function %class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item
+%_ptr_Function_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item = OpTypePointer Function %class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item
+%_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range = OpTypePointer Generic %class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+         %70 = OpTypeFunction %void %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+%_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group = OpTypePointer Generic %class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group
+        %111 = OpTypeFunction %void %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+%_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item = OpTypePointer Generic %class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item
+        %125 = OpTypeFunction %void %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+%_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item = OpTypePointer Generic %class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item
+        %137 = OpTypeFunction %void %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %146 = OpTypeFunction %void %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group
+%_ptr_Function__ptr_Generic_class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon = OpTypePointer Function %_ptr_Generic_class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon
+%_ptr_Function_ulong = OpTypePointer Function %ulong
+        %171 = OpTypeFunction %ulong %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+        %187 = OpTypeFunction %ulong %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item
+%_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item = OpTypePointer Function %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item
+%_ptr_Generic_struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase = OpTypePointer Generic %struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase
+        %201 = OpTypeFunction %ulong %_ptr_Generic_struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase
+%_ptr_Function__ptr_Generic_struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase = OpTypePointer Function %_ptr_Generic_struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase
+%_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array = OpTypePointer Generic %class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array
+        %215 = OpTypeFunction %ulong %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %uint
+%_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array = OpTypePointer Function %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array
+%_ptr_Function_uint = OpTypePointer Function %uint
+        %244 = OpTypeFunction %void %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %uint
+%_ptr_Generic__arr_ulong_ulong_2 = OpTypePointer Generic %_arr_ulong_ulong_2
+%_ptr_Generic_ulong = OpTypePointer Generic %ulong
+%_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range = OpTypePointer Function %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+%_ptr_Generic_uchar = OpTypePointer Generic %uchar
+        %304 = OpTypeFunction %void %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %_ptr_Function_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+%_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item = OpTypePointer Function %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item
+%_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group = OpTypePointer Function %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group
+%_ptr_Generic_struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb0EEE_cl__sycl__detail__ItemBase = OpTypePointer Generic %struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb0EEE_cl__sycl__detail__ItemBase
+        %428 = OpTypeFunction %ulong
+        %433 = OpTypeFunction %void %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %ulong %ulong
+        %453 = OpTypeFunction %void %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %ulong %ulong
+%_ptr_Generic_v3ulong = OpTypePointer Generic %v3ulong
+%__spirv_BuiltInGlobalOffset = OpVariable %_ptr_CrossWorkgroup_v3ulong CrossWorkgroup
+%__spirv_BuiltInLocalInvocationId = OpVariable %_ptr_CrossWorkgroup_v3ulong CrossWorkgroup
+%__spirv_BuiltInGlobalInvocationId = OpVariable %_ptr_CrossWorkgroup_v3ulong CrossWorkgroup
+%__spirv_BuiltInWorkgroupId = OpVariable %_ptr_CrossWorkgroup_v3ulong CrossWorkgroup
+%__spirv_BuiltInNumWorkgroups = OpVariable %_ptr_CrossWorkgroup_v3ulong CrossWorkgroup
+%__spirv_BuiltInWorkgroupSize = OpVariable %_ptr_CrossWorkgroup_v3ulong CrossWorkgroup
+%__spirv_BuiltInGlobalSize = OpVariable %_ptr_CrossWorkgroup_v3ulong CrossWorkgroup
+         %40 = OpConstantNull %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+         %14 = OpFunction %void None %13
+         %15 = OpLabel
+         %19 = OpVariable %_ptr_Function_class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon Function
+         %31 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item Function
+         %33 = OpBitcast %_ptr_Function_uchar %19
+               OpLifetimeStart %33 1
+         %35 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item %31
+         %41 = OpFunctionCall %void %_ZN2cl4sycl6detail7Builder10getElementILi2EEEKNS0_7nd_itemIXT_EEEPS5_ %35 %40
+         %43 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon %19
+         %48 = OpFunctionCall %void %_ZZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_ENKUlNS1_7nd_itemILi2EEEE_clES6_ %43 %31
+         %49 = OpBitcast %_ptr_Function_uchar %19
+               OpLifetimeStop %49 1
+               OpReturn
+               OpFunctionEnd
+%_ZN2cl4sycl6detail7Builder10getElementILi2EEEKNS0_7nd_itemIXT_EEEPS5_ = OpFunction %void None %36
+         %38 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+         %39 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+         %50 = OpLabel
+         %52 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item Function
+         %54 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+         %55 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+         %56 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+         %57 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+         %58 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+         %59 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+         %60 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+         %62 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group Function
+         %64 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item Function
+         %66 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item Function
+               OpStore %52 %39 Aligned 8
+         %67 = OpBitcast %_ptr_Function_uchar %54
+               OpLifetimeStart %67 16
+         %69 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %54
+         %73 = OpFunctionCall %void %_ZN7__spirvL14initGlobalSizeILi2EN2cl4sycl5rangeILi2EEEEET0_v %69
+         %74 = OpBitcast %_ptr_Function_uchar %55
+               OpLifetimeStart %74 16
+         %75 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %55
+         %78 = OpFunctionCall %void %_ZN7__spirvL17initWorkgroupSizeILi2EN2cl4sycl5rangeILi2EEEEET0_v %75
+         %79 = OpBitcast %_ptr_Function_uchar %56
+               OpLifetimeStart %79 16
+         %80 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %56
+         %83 = OpFunctionCall %void %_ZN7__spirvL17initNumWorkgroupsILi2EN2cl4sycl5rangeILi2EEEEET0_v %80
+         %84 = OpBitcast %_ptr_Function_uchar %57
+               OpLifetimeStart %84 16
+         %85 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %57
+         %88 = OpFunctionCall %void %_ZN7__spirvL15initWorkgroupIdILi2EN2cl4sycl2idILi2EEEEET0_v %85
+         %89 = OpBitcast %_ptr_Function_uchar %58
+               OpLifetimeStart %89 16
+         %90 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %58
+         %93 = OpFunctionCall %void %_ZN7__spirvL22initGlobalInvocationIdILi2EN2cl4sycl2idILi2EEEEET0_v %90
+         %94 = OpBitcast %_ptr_Function_uchar %59
+               OpLifetimeStart %94 16
+         %95 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %59
+         %98 = OpFunctionCall %void %_ZN7__spirvL21initLocalInvocationIdILi2EN2cl4sycl2idILi2EEEEET0_v %95
+         %99 = OpBitcast %_ptr_Function_uchar %60
+               OpLifetimeStart %99 16
+        %100 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %60
+        %103 = OpFunctionCall %void %_ZN7__spirvL16initGlobalOffsetILi2EN2cl4sycl2idILi2EEEEET0_v %100
+        %104 = OpBitcast %_ptr_Function_uchar %62
+               OpLifetimeStart %104 64
+        %105 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %54
+        %106 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %55
+        %107 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %56
+        %108 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %57
+        %110 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group %62
+        %118 = OpFunctionCall %void %_ZN2cl4sycl6detail7Builder11createGroupILi2EEENS0_5groupIXT_EEERKNS0_5rangeIXT_EEES9_S9_RKNS0_2idIXT_EEE %110 %105 %106 %107 %108
+        %119 = OpBitcast %_ptr_Function_uchar %64
+               OpLifetimeStart %119 48
+        %120 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %54
+        %121 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %58
+        %122 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %60
+        %124 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item %64
+        %131 = OpFunctionCall %void %_ZN2cl4sycl6detail7Builder10createItemILi2ELb1EEENSt9enable_ifIXT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEESG_ %124 %120 %121 %122
+        %132 = OpBitcast %_ptr_Function_uchar %66
+               OpLifetimeStart %132 32
+        %133 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %55
+        %134 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %59
+        %136 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item %66
+        %142 = OpFunctionCall %void %_ZN2cl4sycl6detail7Builder10createItemILi2ELb0EEENSt9enable_ifIXntT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEE %136 %133 %134
+        %143 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item %64
+        %144 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item %66
+        %145 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group %62
+        %152 = OpFunctionCall %void %_ZN2cl4sycl6detail7Builder12createNDItemILi2EEENS0_7nd_itemIXT_EEERKNS0_4itemIXT_ELb1EEERKNS6_IXT_ELb0EEERKNS0_5groupIXT_EEE %38 %143 %144 %145
+        %153 = OpBitcast %_ptr_Function_uchar %66
+               OpLifetimeStop %153 32
+        %154 = OpBitcast %_ptr_Function_uchar %64
+               OpLifetimeStop %154 48
+        %155 = OpBitcast %_ptr_Function_uchar %62
+               OpLifetimeStop %155 64
+        %156 = OpBitcast %_ptr_Function_uchar %60
+               OpLifetimeStop %156 16
+        %157 = OpBitcast %_ptr_Function_uchar %59
+               OpLifetimeStop %157 16
+        %158 = OpBitcast %_ptr_Function_uchar %58
+               OpLifetimeStop %158 16
+        %159 = OpBitcast %_ptr_Function_uchar %57
+               OpLifetimeStop %159 16
+        %160 = OpBitcast %_ptr_Function_uchar %56
+               OpLifetimeStop %160 16
+        %161 = OpBitcast %_ptr_Function_uchar %55
+               OpLifetimeStop %161 16
+        %162 = OpBitcast %_ptr_Function_uchar %54
+               OpLifetimeStop %162 16
+               OpReturn
+               OpFunctionEnd
+%_ZZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_ENKUlNS1_7nd_itemILi2EEEE_clES6_ = OpFunction %void None %44
+         %46 = OpFunctionParameter %_ptr_Generic_class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon
+         %47 = OpFunctionParameter %_ptr_Function_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+        %163 = OpLabel
+        %165 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon Function
+        %167 = OpVariable %_ptr_Function_ulong Function
+               OpStore %165 %46 Aligned 8
+        %168 = OpLoad %_ptr_Generic_class__ZTSZZ10run_test_aILi1EEivENKUlRN2cl4sycl7handlerEE_clES3_EUlNS1_7nd_itemILi2EEEE__anon %165 Aligned 8
+        %169 = OpBitcast %_ptr_Function_uchar %167
+               OpLifetimeStart %169 8
+        %170 = OpPtrCastToGeneric %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item %47
+        %174 = OpFunctionCall %ulong %_ZNK2cl4sycl7nd_itemILi2EE20get_global_linear_idEv %170
+               OpStore %167 %174 Aligned 8
+        %175 = OpLoad %ulong %167 Aligned 8
+        %177 = OpIAdd %ulong %175 %ulong_1
+               OpStore %167 %177 Aligned 8
+        %178 = OpBitcast %_ptr_Function_uchar %167
+               OpLifetimeStop %178 8
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirvL14initGlobalSizeILi2EN2cl4sycl5rangeILi2EEEEET0_v = OpFunction %void None %70
+         %72 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %261 = OpLabel
+        %264 = OpFunctionCall %void %_ZN7__spirv21InitSizesSTGlobalSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv %72
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirvL17initWorkgroupSizeILi2EN2cl4sycl5rangeILi2EEEEET0_v = OpFunction %void None %70
+         %77 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %265 = OpLabel
+        %268 = OpFunctionCall %void %_ZN7__spirv24InitSizesSTWorkgroupSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv %77
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirvL17initNumWorkgroupsILi2EN2cl4sycl5rangeILi2EEEEET0_v = OpFunction %void None %70
+         %82 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %269 = OpLabel
+        %272 = OpFunctionCall %void %_ZN7__spirv24InitSizesSTNumWorkgroupsILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv %82
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirvL15initWorkgroupIdILi2EN2cl4sycl2idILi2EEEEET0_v = OpFunction %void None %70
+         %87 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %273 = OpLabel
+        %276 = OpFunctionCall %void %_ZN7__spirv22InitSizesSTWorkgroupIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv %87
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirvL22initGlobalInvocationIdILi2EN2cl4sycl2idILi2EEEEET0_v = OpFunction %void None %70
+         %92 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %277 = OpLabel
+        %280 = OpFunctionCall %void %_ZN7__spirv29InitSizesSTGlobalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv %92
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirvL21initLocalInvocationIdILi2EN2cl4sycl2idILi2EEEEET0_v = OpFunction %void None %70
+         %97 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %281 = OpLabel
+        %284 = OpFunctionCall %void %_ZN7__spirv28InitSizesSTLocalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv %97
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirvL16initGlobalOffsetILi2EN2cl4sycl2idILi2EEEEET0_v = OpFunction %void None %70
+        %102 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %285 = OpLabel
+        %288 = OpFunctionCall %void %_ZN7__spirv23InitSizesSTGlobalOffsetILi2EN2cl4sycl2idILi2EEEE8initSizeEv %102
+               OpReturn
+               OpFunctionEnd
+%_ZN2cl4sycl6detail7Builder11createGroupILi2EEENS0_5groupIXT_EEERKNS0_5rangeIXT_EEES9_S9_RKNS0_2idIXT_EEE = OpFunction %void None %111
+        %113 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group
+        %114 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %115 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %116 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %117 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %289 = OpLabel
+        %291 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %292 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %293 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %294 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %295 = OpVariable %_ptr_Function_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+               OpStore %291 %114 Aligned 8
+               OpStore %292 %115 Aligned 8
+               OpStore %293 %116 Aligned 8
+               OpStore %294 %117 Aligned 8
+        %296 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %291 Aligned 8
+        %297 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %292 Aligned 8
+        %298 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %293 Aligned 8
+        %299 = OpBitcast %_ptr_Function_uchar %295
+        %301 = OpBitcast %_ptr_Generic_uchar %298
+               OpCopyMemorySized %299 %301 %ulong_16 Aligned 8
+        %303 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %294 Aligned 8
+        %311 = OpFunctionCall %void %_ZN2cl4sycl5groupILi2EEC2ERKNS0_5rangeILi2EEES6_S4_RKNS0_2idILi2EEE %113 %296 %297 %295 %303
+               OpReturn
+               OpFunctionEnd
+%_ZN2cl4sycl6detail7Builder10createItemILi2ELb1EEENSt9enable_ifIXT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEESG_ = OpFunction %void None %125
+        %127 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item
+        %128 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %129 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %130 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %312 = OpLabel
+        %313 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %314 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %315 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+               OpStore %313 %128 Aligned 8
+               OpStore %314 %129 Aligned 8
+               OpStore %315 %130 Aligned 8
+        %316 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %313 Aligned 8
+        %317 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %314 Aligned 8
+        %318 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %315 Aligned 8
+        %324 = OpFunctionCall %void %_ZN2cl4sycl4itemILi2ELb1EEC2ILb1EEERNSt9enable_ifIXT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEESE_ %127 %316 %317 %318
+               OpReturn
+               OpFunctionEnd
+%_ZN2cl4sycl6detail7Builder10createItemILi2ELb0EEENSt9enable_ifIXntT0_ENS0_4itemIXT_EXT0_EEEE4typeERKNS0_5rangeIXT_EEERKNS0_2idIXT_EEE = OpFunction %void None %137
+        %139 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item
+        %140 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %141 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %325 = OpLabel
+        %326 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %327 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+               OpStore %326 %140 Aligned 8
+               OpStore %327 %141 Aligned 8
+        %328 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %326 Aligned 8
+        %329 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %327 Aligned 8
+        %334 = OpFunctionCall %void %_ZN2cl4sycl4itemILi2ELb0EEC2ILb0EEERNSt9enable_ifIXntT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEE %139 %328 %329
+               OpReturn
+               OpFunctionEnd
+%_ZN2cl4sycl6detail7Builder12createNDItemILi2EEENS0_7nd_itemIXT_EEERKNS0_4itemIXT_ELb1EEERKNS6_IXT_ELb0EEERKNS0_5groupIXT_EEE = OpFunction %void None %146
+        %148 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+        %149 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item
+        %150 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item
+        %151 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group
+        %335 = OpLabel
+        %336 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item Function
+        %338 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item Function
+        %340 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group Function
+               OpStore %336 %149 Aligned 8
+               OpStore %338 %150 Aligned 8
+               OpStore %340 %151 Aligned 8
+        %341 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item %336 Aligned 8
+        %342 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item %338 Aligned 8
+        %343 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group %340 Aligned 8
+        %349 = OpFunctionCall %void %_ZN2cl4sycl7nd_itemILi2EEC2ERKNS0_4itemILi2ELb1EEERKNS3_ILi2ELb0EEERKNS0_5groupILi2EEE %148 %341 %342 %343
+               OpReturn
+               OpFunctionEnd
+%_ZNK2cl4sycl7nd_itemILi2EE20get_global_linear_idEv = OpFunction %ulong Inline %171
+        %173 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+        %179 = OpLabel
+        %180 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item Function
+        %181 = OpVariable %_ptr_Function_ulong Function
+               OpStore %180 %173 Aligned 8
+        %182 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item %180 Aligned 8
+        %183 = OpBitcast %_ptr_Function_uchar %181
+               OpLifetimeStart %183 8
+        %186 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item %182 %uint_0 %uint_0
+        %190 = OpFunctionCall %ulong %_ZNK2cl4sycl4itemILi2ELb1EE13get_linear_idEv %186
+               OpStore %181 %190 Aligned 8
+        %191 = OpLoad %ulong %181 Aligned 8
+        %192 = OpBitcast %_ptr_Function_uchar %181
+               OpLifetimeStop %192 8
+               OpReturnValue %191
+               OpFunctionEnd
+%_ZNK2cl4sycl4itemILi2ELb1EE13get_linear_idEv = OpFunction %ulong Inline %187
+        %189 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item
+        %193 = OpLabel
+        %195 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item Function
+        %196 = OpVariable %_ptr_Function_ulong Function
+               OpStore %195 %189 Aligned 8
+        %197 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item %195 Aligned 8
+        %198 = OpBitcast %_ptr_Function_uchar %196
+               OpLifetimeStart %198 8
+        %200 = OpInBoundsPtrAccessChain %_ptr_Generic_struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase %197 %uint_0 %uint_0
+        %204 = OpFunctionCall %ulong %_ZNK2cl4sycl6detail8ItemBaseILi2ELb1EE13get_linear_idEv %200
+               OpStore %196 %204 Aligned 8
+        %205 = OpLoad %ulong %196 Aligned 8
+        %206 = OpBitcast %_ptr_Function_uchar %196
+               OpLifetimeStop %206 8
+               OpReturnValue %205
+               OpFunctionEnd
+%_ZNK2cl4sycl6detail8ItemBaseILi2ELb1EE13get_linear_idEv = OpFunction %ulong None %201
+        %203 = OpFunctionParameter %_ptr_Generic_struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase
+        %207 = OpLabel
+        %209 = OpVariable %_ptr_Function__ptr_Generic_struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase Function
+               OpStore %209 %203 Aligned 8
+        %210 = OpLoad %_ptr_Generic_struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase %209 Aligned 8
+        %212 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %210 %uint_0 %uint_1
+        %214 = OpBitcast %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %212
+        %219 = OpFunctionCall %ulong %_ZNK2cl4sycl6detail5arrayILi2EEixEi %214 %uint_0
+        %221 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %210 %uint_0 %uint_2
+        %222 = OpBitcast %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %221
+        %223 = OpFunctionCall %ulong %_ZNK2cl4sycl6detail5arrayILi2EEixEi %222 %uint_0
+        %224 = OpISub %ulong %219 %223
+        %225 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %210 %uint_0 %uint_0
+        %226 = OpBitcast %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %225
+        %227 = OpFunctionCall %ulong %_ZNK2cl4sycl6detail5arrayILi2EEixEi %226 %uint_1
+        %228 = OpIMul %ulong %224 %227
+        %229 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %210 %uint_0 %uint_1
+        %230 = OpBitcast %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %229
+        %231 = OpFunctionCall %ulong %_ZNK2cl4sycl6detail5arrayILi2EEixEi %230 %uint_1
+        %232 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %210 %uint_0 %uint_2
+        %233 = OpBitcast %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %232
+        %234 = OpFunctionCall %ulong %_ZNK2cl4sycl6detail5arrayILi2EEixEi %233 %uint_1
+        %235 = OpISub %ulong %231 %234
+        %236 = OpIAdd %ulong %228 %235
+               OpReturnValue %236
+               OpFunctionEnd
+%_ZNK2cl4sycl6detail5arrayILi2EEixEi = OpFunction %ulong None %215
+        %217 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array
+        %218 = OpFunctionParameter %uint
+        %237 = OpLabel
+        %239 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array Function
+        %241 = OpVariable %_ptr_Function_uint Function
+               OpStore %239 %217 Aligned 8
+               OpStore %241 %218 Aligned 4
+        %242 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %239 Aligned 8
+        %243 = OpLoad %uint %241 Aligned 4
+        %248 = OpFunctionCall %void %_ZNK2cl4sycl6detail5arrayILi2EE15check_dimensionEi %242 %243
+        %250 = OpInBoundsPtrAccessChain %_ptr_Generic__arr_ulong_ulong_2 %242 %uint_0 %uint_0
+        %251 = OpLoad %uint %241 Aligned 4
+        %252 = OpSConvert %ulong %251
+        %255 = OpInBoundsPtrAccessChain %_ptr_Generic_ulong %250 %ulong_0 %252
+        %256 = OpLoad %ulong %255 Aligned 8
+               OpReturnValue %256
+               OpFunctionEnd
+%_ZNK2cl4sycl6detail5arrayILi2EE15check_dimensionEi = OpFunction %void Inline %244
+        %246 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array
+        %247 = OpFunctionParameter %uint
+        %257 = OpLabel
+        %258 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array Function
+        %259 = OpVariable %_ptr_Function_uint Function
+               OpStore %258 %246 Aligned 8
+               OpStore %259 %247 Aligned 4
+        %260 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %258 Aligned 8
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirv21InitSizesSTGlobalSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv = OpFunction %void None %70
+        %263 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %591 = OpLabel
+        %593 = OpFunctionCall %ulong %_ZN7__spirvL13getGlobalSizeILi1EEEmv
+        %595 = OpFunctionCall %ulong %_ZN7__spirvL13getGlobalSizeILi0EEEmv
+        %596 = OpFunctionCall %void %_ZN2cl4sycl5rangeILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm %263 %593 %595
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirv24InitSizesSTWorkgroupSizeILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv = OpFunction %void None %70
+        %267 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %571 = OpLabel
+        %573 = OpFunctionCall %ulong %_ZN7__spirvL16getWorkgroupSizeILi1EEEmv
+        %575 = OpFunctionCall %ulong %_ZN7__spirvL16getWorkgroupSizeILi0EEEmv
+        %576 = OpFunctionCall %void %_ZN2cl4sycl5rangeILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm %267 %573 %575
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirv24InitSizesSTNumWorkgroupsILi2EN2cl4sycl5rangeILi2EEEE8initSizeEv = OpFunction %void None %70
+        %271 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %538 = OpLabel
+        %540 = OpFunctionCall %ulong %_ZN7__spirvL16getNumWorkgroupsILi1EEEmv
+        %542 = OpFunctionCall %ulong %_ZN7__spirvL16getNumWorkgroupsILi0EEEmv
+        %547 = OpFunctionCall %void %_ZN2cl4sycl5rangeILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm %271 %540 %542
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirv22InitSizesSTWorkgroupIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv = OpFunction %void None %70
+        %275 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %518 = OpLabel
+        %520 = OpFunctionCall %ulong %_ZN7__spirvL14getWorkgroupIdILi1EEEmv
+        %522 = OpFunctionCall %ulong %_ZN7__spirvL14getWorkgroupIdILi0EEEmv
+        %523 = OpFunctionCall %void %_ZN2cl4sycl2idILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm %275 %520 %522
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirv29InitSizesSTGlobalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv = OpFunction %void None %70
+        %279 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %498 = OpLabel
+        %500 = OpFunctionCall %ulong %_ZN7__spirvL21getGlobalInvocationIdILi1EEEmv
+        %502 = OpFunctionCall %ulong %_ZN7__spirvL21getGlobalInvocationIdILi0EEEmv
+        %503 = OpFunctionCall %void %_ZN2cl4sycl2idILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm %279 %500 %502
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirv28InitSizesSTLocalInvocationIdILi2EN2cl4sycl2idILi2EEEE8initSizeEv = OpFunction %void None %70
+        %283 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %478 = OpLabel
+        %480 = OpFunctionCall %ulong %_ZN7__spirvL20getLocalInvocationIdILi1EEEmv
+        %482 = OpFunctionCall %ulong %_ZN7__spirvL20getLocalInvocationIdILi0EEEmv
+        %483 = OpFunctionCall %void %_ZN2cl4sycl2idILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm %283 %480 %482
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirv23InitSizesSTGlobalOffsetILi2EN2cl4sycl2idILi2EEEE8initSizeEv = OpFunction %void None %70
+        %287 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %427 = OpLabel
+        %430 = OpFunctionCall %ulong %_ZN7__spirvL15getGlobalOffsetILi1EEEmv
+        %432 = OpFunctionCall %ulong %_ZN7__spirvL15getGlobalOffsetILi0EEEmv
+        %438 = OpFunctionCall %void %_ZN2cl4sycl2idILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm %287 %430 %432
+               OpReturn
+               OpFunctionEnd
+%_ZN2cl4sycl5groupILi2EEC2ERKNS0_5rangeILi2EEES6_S4_RKNS0_2idILi2EEE = OpFunction %void None %304
+        %306 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group
+        %307 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %308 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %309 = OpFunctionParameter %_ptr_Function_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %310 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %405 = OpLabel
+        %406 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group Function
+        %407 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %408 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %409 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+               OpStore %406 %306 Aligned 8
+               OpStore %407 %307 Aligned 8
+               OpStore %408 %308 Aligned 8
+               OpStore %409 %310 Aligned 8
+        %410 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group %406 Aligned 8
+        %411 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %410 %uint_0 %uint_0
+        %412 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %407 Aligned 8
+        %413 = OpBitcast %_ptr_Generic_uchar %411
+        %414 = OpBitcast %_ptr_Generic_uchar %412
+               OpCopyMemorySized %413 %414 %ulong_16 Aligned 8
+        %415 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %410 %uint_0 %uint_1
+        %416 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %408 Aligned 8
+        %417 = OpBitcast %_ptr_Generic_uchar %415
+        %418 = OpBitcast %_ptr_Generic_uchar %416
+               OpCopyMemorySized %417 %418 %ulong_16 Aligned 8
+        %419 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %410 %uint_0 %uint_2
+        %420 = OpBitcast %_ptr_Generic_uchar %419
+        %421 = OpBitcast %_ptr_Function_uchar %309
+               OpCopyMemorySized %420 %421 %ulong_16 Aligned 8
+        %423 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %410 %uint_0 %uint_3
+        %424 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %409 Aligned 8
+        %425 = OpBitcast %_ptr_Generic_uchar %423
+        %426 = OpBitcast %_ptr_Generic_uchar %424
+               OpCopyMemorySized %425 %426 %ulong_16 Aligned 8
+               OpReturn
+               OpFunctionEnd
+%_ZN2cl4sycl4itemILi2ELb1EEC2ILb1EEERNSt9enable_ifIXT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEESE_ = OpFunction %void None %125
+        %320 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item
+        %321 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %322 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %323 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %386 = OpLabel
+        %387 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item Function
+        %388 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %389 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %390 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+               OpStore %387 %320 Aligned 8
+               OpStore %388 %321 Aligned 8
+               OpStore %389 %322 Aligned 8
+               OpStore %390 %323 Aligned 8
+        %391 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item %387 Aligned 8
+        %392 = OpInBoundsPtrAccessChain %_ptr_Generic_struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb1EEE_cl__sycl__detail__ItemBase %391 %uint_0 %uint_0
+        %393 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %392 %uint_0 %uint_0
+        %394 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %388 Aligned 8
+        %395 = OpBitcast %_ptr_Generic_uchar %393
+        %396 = OpBitcast %_ptr_Generic_uchar %394
+               OpCopyMemorySized %395 %396 %ulong_16 Aligned 8
+        %397 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %392 %uint_0 %uint_1
+        %398 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %389 Aligned 8
+        %399 = OpBitcast %_ptr_Generic_uchar %397
+        %400 = OpBitcast %_ptr_Generic_uchar %398
+               OpCopyMemorySized %399 %400 %ulong_16 Aligned 8
+        %401 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %392 %uint_0 %uint_2
+        %402 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %390 Aligned 8
+        %403 = OpBitcast %_ptr_Generic_uchar %401
+        %404 = OpBitcast %_ptr_Generic_uchar %402
+               OpCopyMemorySized %403 %404 %ulong_16 Aligned 8
+               OpReturn
+               OpFunctionEnd
+%_ZN2cl4sycl4itemILi2ELb0EEC2ILb0EEERNSt9enable_ifIXntT_EKNS0_5rangeILi2EEEE4typeERKNS0_2idILi2EEE = OpFunction %void None %137
+        %331 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item
+        %332 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %333 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %371 = OpLabel
+        %372 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item Function
+        %373 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %374 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+               OpStore %372 %331 Aligned 8
+               OpStore %373 %332 Aligned 8
+               OpStore %374 %333 Aligned 8
+        %375 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item %372 Aligned 8
+        %377 = OpInBoundsPtrAccessChain %_ptr_Generic_struct__ZTSN2cl4sycl6detail8ItemBaseILi2ELb0EEE_cl__sycl__detail__ItemBase %375 %uint_0 %uint_0
+        %378 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %377 %uint_0 %uint_0
+        %379 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %373 Aligned 8
+        %380 = OpBitcast %_ptr_Generic_uchar %378
+        %381 = OpBitcast %_ptr_Generic_uchar %379
+               OpCopyMemorySized %380 %381 %ulong_16 Aligned 8
+        %382 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %377 %uint_0 %uint_1
+        %383 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %374 Aligned 8
+        %384 = OpBitcast %_ptr_Generic_uchar %382
+        %385 = OpBitcast %_ptr_Generic_uchar %383
+               OpCopyMemorySized %384 %385 %ulong_16 Aligned 8
+               OpReturn
+               OpFunctionEnd
+%_ZN2cl4sycl7nd_itemILi2EEC2ERKNS0_4itemILi2ELb1EEERKNS3_ILi2ELb0EEERKNS0_5groupILi2EEE = OpFunction %void None %146
+        %345 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item
+        %346 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item
+        %347 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item
+        %348 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group
+        %350 = OpLabel
+        %351 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item Function
+        %352 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item Function
+        %353 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item Function
+        %354 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group Function
+               OpStore %351 %345 Aligned 8
+               OpStore %352 %346 Aligned 8
+               OpStore %353 %347 Aligned 8
+               OpStore %354 %348 Aligned 8
+        %355 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl7nd_itemILi2EEE_cl__sycl__nd_item %351 Aligned 8
+        %356 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item %355 %uint_0 %uint_0
+        %357 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb1EEE_cl__sycl__item %352 Aligned 8
+        %358 = OpBitcast %_ptr_Generic_uchar %356
+        %359 = OpBitcast %_ptr_Generic_uchar %357
+               OpCopyMemorySized %358 %359 %ulong_48 Aligned 8
+        %361 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item %355 %uint_0 %uint_1
+        %362 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl4itemILi2ELb0EEE_cl__sycl__item %353 Aligned 8
+        %363 = OpBitcast %_ptr_Generic_uchar %361
+        %364 = OpBitcast %_ptr_Generic_uchar %362
+               OpCopyMemorySized %363 %364 %ulong_32 Aligned 8
+        %366 = OpInBoundsPtrAccessChain %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group %355 %uint_0 %uint_2
+        %367 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5groupILi2EEE_cl__sycl__group %354 Aligned 8
+        %368 = OpBitcast %_ptr_Generic_uchar %366
+        %369 = OpBitcast %_ptr_Generic_uchar %367
+               OpCopyMemorySized %368 %369 %ulong_64 Aligned 8
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirvL15getGlobalOffsetILi1EEEmv = OpFunction %ulong None %428
+        %439 = OpLabel
+        %441 = OpFunctionCall %ulong %_Z22__spirv_GlobalOffset_yv
+               OpReturnValue %441
+               OpFunctionEnd
+%_ZN7__spirvL15getGlobalOffsetILi0EEEmv = OpFunction %ulong None %428
+        %442 = OpLabel
+        %444 = OpFunctionCall %ulong %_Z22__spirv_GlobalOffset_xv
+               OpReturnValue %444
+               OpFunctionEnd
+%_ZN2cl4sycl2idILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm = OpFunction %void None %433
+        %435 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %436 = OpFunctionParameter %ulong
+        %437 = OpFunctionParameter %ulong
+        %445 = OpLabel
+        %446 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %447 = OpVariable %_ptr_Function_ulong Function
+        %448 = OpVariable %_ptr_Function_ulong Function
+               OpStore %446 %435 Aligned 8
+               OpStore %447 %436 Aligned 8
+               OpStore %448 %437 Aligned 8
+        %449 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %446 Aligned 8
+        %450 = OpBitcast %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %449
+        %451 = OpLoad %ulong %447 Aligned 8
+        %452 = OpLoad %ulong %448 Aligned 8
+        %458 = OpFunctionCall %void %_ZN2cl4sycl6detail5arrayILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm %450 %451 %452
+               OpReturn
+               OpFunctionEnd
+%_Z22__spirv_GlobalOffset_yv = OpFunction %ulong None %428
+        %474 = OpLabel
+        %475 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInGlobalOffset
+        %476 = OpLoad %v3ulong %475 Aligned 32
+        %477 = OpCompositeExtract %ulong %476 1
+               OpReturnValue %477
+               OpFunctionEnd
+%_Z22__spirv_GlobalOffset_xv = OpFunction %ulong None %428
+        %469 = OpLabel
+        %471 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInGlobalOffset
+        %472 = OpLoad %v3ulong %471 Aligned 32
+        %473 = OpCompositeExtract %ulong %472 0
+               OpReturnValue %473
+               OpFunctionEnd
+%_ZN2cl4sycl6detail5arrayILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm = OpFunction %void None %453
+        %455 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array
+        %456 = OpFunctionParameter %ulong
+        %457 = OpFunctionParameter %ulong
+        %459 = OpLabel
+        %460 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array Function
+        %461 = OpVariable %_ptr_Function_ulong Function
+        %462 = OpVariable %_ptr_Function_ulong Function
+               OpStore %460 %455 Aligned 8
+               OpStore %461 %456 Aligned 8
+               OpStore %462 %457 Aligned 8
+        %463 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %460 Aligned 8
+        %464 = OpInBoundsPtrAccessChain %_ptr_Generic__arr_ulong_ulong_2 %463 %uint_0 %uint_0
+        %465 = OpInBoundsPtrAccessChain %_ptr_Generic_ulong %464 %ulong_0 %ulong_0
+        %466 = OpLoad %ulong %461 Aligned 8
+               OpStore %465 %466 Aligned 8
+        %467 = OpInBoundsPtrAccessChain %_ptr_Generic_ulong %465 %ulong_1
+        %468 = OpLoad %ulong %462 Aligned 8
+               OpStore %467 %468 Aligned 8
+               OpReturn
+               OpFunctionEnd
+%_ZN7__spirvL20getLocalInvocationIdILi1EEEmv = OpFunction %ulong None %428
+        %484 = OpLabel
+        %486 = OpFunctionCall %ulong %_Z27__spirv_LocalInvocationId_yv
+               OpReturnValue %486
+               OpFunctionEnd
+%_ZN7__spirvL20getLocalInvocationIdILi0EEEmv = OpFunction %ulong None %428
+        %487 = OpLabel
+        %489 = OpFunctionCall %ulong %_Z27__spirv_LocalInvocationId_xv
+               OpReturnValue %489
+               OpFunctionEnd
+%_Z27__spirv_LocalInvocationId_yv = OpFunction %ulong None %428
+        %494 = OpLabel
+        %495 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInLocalInvocationId
+        %496 = OpLoad %v3ulong %495 Aligned 32
+        %497 = OpCompositeExtract %ulong %496 1
+               OpReturnValue %497
+               OpFunctionEnd
+%_Z27__spirv_LocalInvocationId_xv = OpFunction %ulong None %428
+        %490 = OpLabel
+        %491 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInLocalInvocationId
+        %492 = OpLoad %v3ulong %491 Aligned 32
+        %493 = OpCompositeExtract %ulong %492 0
+               OpReturnValue %493
+               OpFunctionEnd
+%_ZN7__spirvL21getGlobalInvocationIdILi1EEEmv = OpFunction %ulong None %428
+        %504 = OpLabel
+        %506 = OpFunctionCall %ulong %_Z28__spirv_GlobalInvocationId_yv
+               OpReturnValue %506
+               OpFunctionEnd
+%_ZN7__spirvL21getGlobalInvocationIdILi0EEEmv = OpFunction %ulong None %428
+        %507 = OpLabel
+        %509 = OpFunctionCall %ulong %_Z28__spirv_GlobalInvocationId_xv
+               OpReturnValue %509
+               OpFunctionEnd
+%_Z28__spirv_GlobalInvocationId_yv = OpFunction %ulong None %428
+        %514 = OpLabel
+        %515 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInGlobalInvocationId
+        %516 = OpLoad %v3ulong %515 Aligned 32
+        %517 = OpCompositeExtract %ulong %516 1
+               OpReturnValue %517
+               OpFunctionEnd
+%_Z28__spirv_GlobalInvocationId_xv = OpFunction %ulong None %428
+        %510 = OpLabel
+        %511 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInGlobalInvocationId
+        %512 = OpLoad %v3ulong %511 Aligned 32
+        %513 = OpCompositeExtract %ulong %512 0
+               OpReturnValue %513
+               OpFunctionEnd
+%_ZN7__spirvL14getWorkgroupIdILi1EEEmv = OpFunction %ulong None %428
+        %524 = OpLabel
+        %526 = OpFunctionCall %ulong %_Z21__spirv_WorkgroupId_yv
+               OpReturnValue %526
+               OpFunctionEnd
+%_ZN7__spirvL14getWorkgroupIdILi0EEEmv = OpFunction %ulong None %428
+        %527 = OpLabel
+        %529 = OpFunctionCall %ulong %_Z21__spirv_WorkgroupId_xv
+               OpReturnValue %529
+               OpFunctionEnd
+%_Z21__spirv_WorkgroupId_yv = OpFunction %ulong None %428
+        %534 = OpLabel
+        %535 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInWorkgroupId
+        %536 = OpLoad %v3ulong %535 Aligned 32
+        %537 = OpCompositeExtract %ulong %536 1
+               OpReturnValue %537
+               OpFunctionEnd
+%_Z21__spirv_WorkgroupId_xv = OpFunction %ulong None %428
+        %530 = OpLabel
+        %531 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInWorkgroupId
+        %532 = OpLoad %v3ulong %531 Aligned 32
+        %533 = OpCompositeExtract %ulong %532 0
+               OpReturnValue %533
+               OpFunctionEnd
+%_ZN7__spirvL16getNumWorkgroupsILi1EEEmv = OpFunction %ulong None %428
+        %548 = OpLabel
+        %550 = OpFunctionCall %ulong %_Z23__spirv_NumWorkgroups_yv
+               OpReturnValue %550
+               OpFunctionEnd
+%_ZN7__spirvL16getNumWorkgroupsILi0EEEmv = OpFunction %ulong None %428
+        %551 = OpLabel
+        %553 = OpFunctionCall %ulong %_Z23__spirv_NumWorkgroups_xv
+               OpReturnValue %553
+               OpFunctionEnd
+%_ZN2cl4sycl5rangeILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm = OpFunction %void None %433
+        %544 = OpFunctionParameter %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range
+        %545 = OpFunctionParameter %ulong
+        %546 = OpFunctionParameter %ulong
+        %554 = OpLabel
+        %555 = OpVariable %_ptr_Function__ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range Function
+        %556 = OpVariable %_ptr_Function_ulong Function
+        %557 = OpVariable %_ptr_Function_ulong Function
+               OpStore %555 %544 Aligned 8
+               OpStore %556 %545 Aligned 8
+               OpStore %557 %546 Aligned 8
+        %558 = OpLoad %_ptr_Generic_class__ZTSN2cl4sycl5rangeILi2EEE_cl__sycl__range %555 Aligned 8
+        %559 = OpBitcast %_ptr_Generic_class__ZTSN2cl4sycl6detail5arrayILi2EEE_cl__sycl__detail__array %558
+        %560 = OpLoad %ulong %556 Aligned 8
+        %561 = OpLoad %ulong %557 Aligned 8
+        %562 = OpFunctionCall %void %_ZN2cl4sycl6detail5arrayILi2EEC2ILi2EEENSt9enable_ifIXeqT_Li2EEmE4typeEm %559 %560 %561
+               OpReturn
+               OpFunctionEnd
+%_Z23__spirv_NumWorkgroups_yv = OpFunction %ulong None %428
+        %567 = OpLabel
+        %568 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInNumWorkgroups
+        %569 = OpLoad %v3ulong %568 Aligned 32
+        %570 = OpCompositeExtract %ulong %569 1
+               OpReturnValue %570
+               OpFunctionEnd
+%_Z23__spirv_NumWorkgroups_xv = OpFunction %ulong None %428
+        %563 = OpLabel
+        %564 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInNumWorkgroups
+        %565 = OpLoad %v3ulong %564 Aligned 32
+        %566 = OpCompositeExtract %ulong %565 0
+               OpReturnValue %566
+               OpFunctionEnd
+%_ZN7__spirvL16getWorkgroupSizeILi1EEEmv = OpFunction %ulong None %428
+        %577 = OpLabel
+        %579 = OpFunctionCall %ulong %_Z23__spirv_WorkgroupSize_yv
+               OpReturnValue %579
+               OpFunctionEnd
+%_ZN7__spirvL16getWorkgroupSizeILi0EEEmv = OpFunction %ulong None %428
+        %580 = OpLabel
+        %582 = OpFunctionCall %ulong %_Z23__spirv_WorkgroupSize_xv
+               OpReturnValue %582
+               OpFunctionEnd
+%_Z23__spirv_WorkgroupSize_yv = OpFunction %ulong None %428
+        %587 = OpLabel
+        %588 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInWorkgroupSize
+        %589 = OpLoad %v3ulong %588 Aligned 32
+        %590 = OpCompositeExtract %ulong %589 1
+               OpReturnValue %590
+               OpFunctionEnd
+%_Z23__spirv_WorkgroupSize_xv = OpFunction %ulong None %428
+        %583 = OpLabel
+        %584 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInWorkgroupSize
+        %585 = OpLoad %v3ulong %584 Aligned 32
+        %586 = OpCompositeExtract %ulong %585 0
+               OpReturnValue %586
+               OpFunctionEnd
+%_ZN7__spirvL13getGlobalSizeILi1EEEmv = OpFunction %ulong None %428
+        %597 = OpLabel
+        %599 = OpFunctionCall %ulong %_Z20__spirv_GlobalSize_yv
+               OpReturnValue %599
+               OpFunctionEnd
+%_ZN7__spirvL13getGlobalSizeILi0EEEmv = OpFunction %ulong None %428
+        %600 = OpLabel
+        %602 = OpFunctionCall %ulong %_Z20__spirv_GlobalSize_xv
+               OpReturnValue %602
+               OpFunctionEnd
+%_Z20__spirv_GlobalSize_yv = OpFunction %ulong None %428
+        %607 = OpLabel
+        %608 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInGlobalSize
+        %609 = OpLoad %v3ulong %608 Aligned 32
+        %610 = OpCompositeExtract %ulong %609 1
+               OpReturnValue %610
+               OpFunctionEnd
+%_Z20__spirv_GlobalSize_xv = OpFunction %ulong None %428
+        %603 = OpLabel
+        %604 = OpPtrCastToGeneric %_ptr_Generic_v3ulong %__spirv_BuiltInGlobalSize
+        %605 = OpLoad %v3ulong %604 Aligned 32
+        %606 = OpCompositeExtract %ulong %605 0
+               OpReturnValue %606
+               OpFunctionEnd
